@@ -21,12 +21,21 @@ class ViewController: UIViewController {
     
     // SHAK: Actions
     @IBAction func pressButton(_ sender: Any) {
+
     }
     
     // SHAK: Functions
     func presentingButton() {
         pressButton.layer.cornerRadius = pressButton.frame.height / 2
         pressButton.clipsToBounds = true
+        buttonAnimation()
+    }
+    
+    func buttonAnimation() {
+        let pulse = ManagePulsingAnimation(radius: 300, numberOfPulses: .infinity, position: pressButton.center)
+        pulse.animationDuration = 1.0
+        pulse.backgroundColor = pressButton.backgroundColor?.cgColor
+        self.view.layer.insertSublayer(pulse, below: self.view.layer)
     }
 }
 

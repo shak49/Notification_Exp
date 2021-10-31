@@ -30,9 +30,24 @@ class ManagePulsingAnimation: CALayer {
         self.radius = radius
         self.numberOfPulses = numberOfPulses
         self.position = position
+        self.bounds = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
+        self.cornerRadius = radius
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            self.setupAnimation()
+            DispatchQueue.main.async {
+                self.add(self.animationGroup, forKey: "pulse")
+            }
+        }
     }
     
     // SHAK: Functions
+    func setupAnimation() {
+        self.animationGroup.duration = animationDuration
+        self.animationGroup.repeatCount = numberOfPulses
+        let defaultCurve = CAMediaTimingFunction(name: .default)
+        self.animationGroup.timingFunction = defaultCurve
+        self.animationGroup.animations = [scaleAnimation(), createOpacityAnimation()]
+    }
     func scaleAnimation() -> CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "transform.scale.xy")
         animation.fromValue = NSNumber(value: 0)
@@ -40,7 +55,6 @@ class ManagePulsingAnimation: CALayer {
         animation.duration = animationDuration
         return animation
     }
-    
     func createOpacityAnimation() -> CAKeyframeAnimation {
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = animationDuration
