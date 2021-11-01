@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     func buttonAnimation() {
-        let pulse = ManagePulsingAnimation(radius: 300, numberOfPulses: .infinity, position: pressButton.center)
+        let pulse = PulsAnimationManager(radius: 300, numberOfPulses: .infinity, position: pressButton.center)
         pulse.animationDuration = 1.0
         pulse.backgroundColor = pressButton.backgroundColor?.cgColor
         self.view.layer.insertSublayer(pulse, below: self.view.layer)

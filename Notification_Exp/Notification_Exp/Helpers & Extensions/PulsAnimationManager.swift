@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ManagePulsingAnimation: CALayer {
+class PulsAnimationManager: CALayer {
     // SHAK: Properties
     var animationGroup = CAAnimationGroup()
     var animationDuration: TimeInterval = 1.5
