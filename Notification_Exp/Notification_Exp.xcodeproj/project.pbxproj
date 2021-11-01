@@ -74,7 +74,7 @@
 		6D633A40272F3D8400EAC81C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6D633A43272F3DC000EAC81C /* View Controllers */,
+				6D633A2E272F393B00EAC81C /* NotificationLaunchViewController.swift */,
 				6D633A42272F3DB400EAC81C /* Storyboards */,
 			);
 			path = Views;
@@ -98,14 +98,6 @@
 				6D633A35272F393D00EAC81C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		6D633A43272F3DC000EAC81C /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				6D633A2E272F393B00EAC81C /* NotificationLaunchViewController.swift */,
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		6D633A44272F3DDA00EAC81C /* Helpers & Extensions */ = {
