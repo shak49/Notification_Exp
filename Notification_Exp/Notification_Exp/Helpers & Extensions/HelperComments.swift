@@ -9,7 +9,7 @@ import Foundation
 
 
 // Testing Push Notifications Resources:
-// poes send com.rebeloper.LocalAndPushNotifications --title Hello --body push --badge 1 --verbose
+// poes send com.ShakFeizi.Notification-Exp --title Hello --body push --badge 1 --verbose
 // https://github.com/AvdLee/Poes
 // https://github.com/yonaskolb/mint
 // https://brew.sh
